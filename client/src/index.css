@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+body {
+  font-family: Signika;
+}
+
+.rounded {
+  border-radius: 5px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--content-width) / 2));
+  }
+}
+
+.text-outline-thick {
+  color: #000;
+}
+
+.animate-scroll {
+  will-change: transform;
+  animation: scroll var(--duration) linear infinite;
+}
+
